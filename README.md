@@ -1,6 +1,8 @@
 # Academic Ranker (front-end)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+Developed on: **2019-03-31**
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) v7.3.7, with [Node](https://github.com/nodejs/node) v11.13.0.
 
 ## Development server
 
