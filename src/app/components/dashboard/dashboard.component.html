@@ -1,0 +1,52 @@
+<div class="container">
+    <h1 class="text-center">Ranking</h1>
+</div>
+<br>
+<div class="container">
+    <div class="text-center" *ngIf="isLoadingResults">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Carregando...</span>
+        </div>
+    </div>
+    <div *ngIf="!isLoadingResults">
+        <div class="form-group row">
+            <div class="col-md-12">
+                <input type="text" [(ngModel)]="searchText" class="form-control" id="search" placeholder="Procurar"
+                    mdbInput>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover z-depth-1" mdbTable>
+            <thead class="thead-light">
+                <tr>
+                    <th [mdbTableSort]="elements" sortBy="instituicao">
+                        Nome da instituição<i class="fa-sort fas"></i>
+                    </th>
+                    <th [mdbTableSort]="elements" sortBy="curso">
+                        Nome do curso<i class="fa-sort fas"></i>
+                    </th>
+                    <th [mdbTableSort]="elements" sortBy="notageral">
+                        Nota geral<i class="fa-sort fas"></i>
+                    </th>
+                    <th [mdbTableSort]="elements" sortBy="notaporcurso">
+                        Nota por curso<i class="fa-sort fas"></i>
+                    </th>
+                    <th [mdbTableSort]="elements" sortBy="media">
+                        Média das notas dos alunos do curso<i class="fa-sort fas"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="elements.length == 0">
+                    <td colspan="5" class="text-center">Sem dados</td>
+                </tr>
+                <tr *ngFor="let el of elements">
+                    <td>{{ el.instituicao }}</td>
+                    <td>{{ el.curso }}</td>
+                    <td>{{ el.notageral }}</td>
+                    <td>{{ el.notaporcurso }}</td>
+                    <td>{{ el.media }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

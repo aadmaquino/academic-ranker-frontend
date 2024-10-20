@@ -1,0 +1,56 @@
+<div class="container">
+    <h1 class="text-center">Cadastro</h1>
+    <br>
+    <div *ngIf="mensagemsucesso" class="alert alert-success font-weight-bold" role="alert">
+        Cadastro realizado com sucesso!
+    </div>
+    <div *ngIf="mensagemerro" class="alert alert-danger font-weight-bold" role="alert">
+        OPS! Ocorreu um erro ao cadastrar a performance. Por favor, tente novamente.
+    </div>
+    <div class="card bg-light mb-3">
+        <div class="card-header">Por favor, preencha os campos abaixo:</div>
+        <div class="card-body">
+            <form class="form-horizontal" [formGroup]="instituicaoForm"
+                (ngSubmit)="onFormSubmit(instituicaoForm.value)">
+                <div class="form-group row">
+                    <label for="instituicao" class="col-sm-3 col-form-label text-right">Instituição</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="instituicao" formControlName="instituicao" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="curso" class="col-sm-3 col-form-label text-right">Curso</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="curso" formControlName="curso" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="notageral" class="col-sm-3 col-form-label text-right">Nota Geral</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" id="notageral" [min]=".01" [max]="100.00" [step]=".01"
+                            formControlName="notageral" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="notaporcurso" class="col-sm-3 col-form-label text-right">Nota do curso</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" id="notaporcurso" [min]=".01" [max]="100.00"
+                            [step]=".01" formControlName="notaporcurso" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="media" class="col-sm-3 col-form-label text-right">Média das notas dos alunos</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" id="media" [min]=".01" [max]="100.00" [step]=".01"
+                            formControlName="media" required>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mr-1"
+                        [disabled]="!instituicaoForm.valid">Cadastrar</button>
+                    <button type="button" class="btn btn-secondary" [routerLink]="['/dashboard']">Voltar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
