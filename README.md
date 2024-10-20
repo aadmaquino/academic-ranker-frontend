@@ -2,7 +2,12 @@
 
 Developed on: **2019-03-31**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) v7.3.7, with [Node](https://github.com/nodejs/node) v11.13.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) v7.3.7.
+
+## Launching
+
+Before begin, make sure you have installed all tools that required:
+* [Node.js](https://nodejs.org/en/) v11.13.0
 
 ## Development server
 
